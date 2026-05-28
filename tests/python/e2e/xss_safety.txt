@@ -1,0 +1,4 @@
+<div class="greet">Hello, &lt;script&gt;alert('x')&lt;/script&gt;!</div>
+<a href="?q=&lt;script&gt;alert('x')&lt;/script&gt;">He said "hi" &amp; left</a>
+<div><b>&lt;script&gt;alert('x')&lt;/script&gt;</b>: <span>He said "hi" &amp; left</span></div>
+<section><div class="greet">Hello, &lt;script&gt;alert('x')&lt;/script&gt;!</div><div><b>ok</b>: <span>He said "hi" &amp; left</span></div></section>

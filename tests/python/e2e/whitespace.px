@@ -1,0 +1,54 @@
+# 1. Inline text adjacent to elements — trailing space before tag must be kept
+print(<p>Hello, <strong>world</strong>!</p>)
+
+# 2. Multiline indented content — collapsed to single line, indentation stripped
+print(<p>
+    Hello
+    World
+</p>)
+
+# 3. Elements separated by newlines — whitespace-only nodes dropped, no space between
+print(<div>
+    <span>left</span>
+    <span>right</span>
+</div>)
+
+# 4. Elements on the same line separated by a single space — space kept
+print(<span>A</span>)
+print(<p><em>one</em> <em>two</em> <em>three</em></p>)
+
+# 5. Leading space before first element kept (inline context)
+print(<p> <em>Note:</em> important</p>)
+
+# 6. Text node that is purely multiline whitespace is dropped entirely
+print(<div>
+    <p>only child</p>
+</div>)
+
+# 7. Multiline text with mixed indentation joined with spaces
+print(<blockquote>
+    First line
+    second line
+    third line
+</blockquote>)
+
+# 8. Without {}: multiline text collapses with a space between lines
+print(<div>
+    Hello
+    World
+</div>)
+
+# 9. With {}: empty expression splits the text into two nodes — no space injected
+print(<div>
+    Hello{}
+    World
+</div>)
+
+# 10. {" "}: explicit non-collapsible space between multiline text
+print(<div>
+    Hello{" "}
+    World
+</div>)
+
+# 11. {} between inline elements on one line — no space, unlike a literal space
+print(<p>one{}two</p>)

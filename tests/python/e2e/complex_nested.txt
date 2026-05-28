@@ -1,0 +1,4 @@
+<img src="home.png" alt="home" class="icon"/>
+<span class="badge">NEW</span>
+<button class="btn btn-green"><img src="star.png" alt="star" class="icon"/><span>Save</span><span class="badge">NEW</span></button>
+<article class="card"><h2>Demo</h2><ul><li>alpha</li><li>beta</li><li>gamma</li></ul><button class="btn btn-primary"><img src="star.png" alt="star" class="icon"/><span>OK</span><span class="badge">NEW</span></button></article>

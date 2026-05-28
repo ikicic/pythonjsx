@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "setuptools-rust>=1.7", "Cython>=3.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pythonjsx"
+version = "0.1.0"
+description = "Python with JSX syntax support"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "BSD-3-Clause"}
+authors = [{name = "Ivica Kičić"}]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "tree-sitter>=0.20.0",
+]
+
+[tool.setuptools]
+packages = ["pythonjsx"]
+
+[[tool.setuptools-rust.bins]]
+target = "pythonjsx"
+
+[[tool.setuptools-rust.bins]]
+target = "pythonjsx-langserver"
+
+[[tool.setuptools-rust.bins]]
+target = "pythonjsx-format"
+
+[tool.ruff]
+line-length = 96
+target-version = "py314"

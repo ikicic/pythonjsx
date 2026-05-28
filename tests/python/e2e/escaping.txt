@@ -1,0 +1,5 @@
+<div>&lt;script&gt;alert(1)&lt;/script&gt;</div>
+<p>a &amp; b</p>
+<a href="/q?a=1&amp;b=2">link</a>
+<abbr title="&quot;quoted&quot;">abbr</abbr>
+<a href="/example?a=5&amp;b=10">Hello with "asdf &lt;&gt;</a>

@@ -1,0 +1,4 @@
+print(<br/>)
+print(<input type="text"/>)
+print(<hr/>)
+print(<img src="photo.jpg" alt="A photo"/>)

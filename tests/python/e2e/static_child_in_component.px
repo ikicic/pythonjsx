@@ -1,0 +1,21 @@
+# Static JSX children passed to components must render verbatim, not
+# re-escaped.  Regression for the `<Foo><div>…</div></Foo>` double-
+# escape bug surfaced by the spread-in-body shape below.
+
+def Bla(*args):
+    return <div>{*args}</div>
+
+def App():
+    return <Bla><div>Hello</div></Bla>
+
+print(App().to_html())
+
+# Static text child (no HTML markup inside) — must render unchanged.
+def Wrap(*args):
+    return <p>{*args}</p>
+
+print(<Wrap>plain text</Wrap>.to_html())
+
+# HTML-entity-looking text — the compile-time escape already produced
+# `a &amp; b`; passing it as SafeStr avoids re-escaping.
+print(<Wrap>a & b</Wrap>.to_html())

@@ -1,0 +1,8 @@
+def page():
+    return <article><h1>Title</h1><p>Body text.</p></article>
+
+def deep():
+    return <div><section><ul><li>Item</li></ul></section></div>
+
+print(page())
+print(deep())

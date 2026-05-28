@@ -1,0 +1,8 @@
+def Badge(label: str):
+    return <span class="badge">{label}</span>
+
+def Card(title: str):
+    return <div class="card"><h2>{title}</h2><Badge label="new" /></div>
+
+print(Badge(label="ok"))
+print(Card(title="News"))

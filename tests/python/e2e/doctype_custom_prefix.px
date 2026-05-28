@@ -1,0 +1,4 @@
+def page():
+    return <svg xmlns="http://www.w3.org/2000/svg"><rect/></svg>
+
+print(page().to_html_document('<?xml version="1.0"?>\n'))

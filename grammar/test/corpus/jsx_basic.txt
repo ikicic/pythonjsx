@@ -1,0 +1,91 @@
+================================================================================
+Basic JSX element
+================================================================================
+
+<div>Hello</div>
+
+--------------------------------------------------------------------------------
+
+(module
+  (expression_statement
+    (jsx_element
+      (identifier)
+      (jsx_text)
+      (identifier))))
+
+================================================================================
+JSX with attributes
+================================================================================
+
+<div id="header">Content</div>
+
+--------------------------------------------------------------------------------
+
+(module
+  (expression_statement
+    (jsx_element
+      (identifier)
+      (jsx_attribute
+        (jsx_attribute_name
+          (identifier))
+        (string
+          (string_start)
+          (string_content)
+          (string_end)))
+      (jsx_text)
+      (identifier))))
+
+================================================================================
+JSX component
+================================================================================
+
+<Header title="test" />
+
+--------------------------------------------------------------------------------
+
+(module
+  (expression_statement
+    (jsx_element
+      (identifier)
+      (jsx_attribute
+        (jsx_attribute_name
+          (identifier))
+        (string
+          (string_start)
+          (string_content)
+          (string_end))))))
+
+================================================================================
+JSX fragment
+================================================================================
+
+<> <A /> <B /> </>
+
+--------------------------------------------------------------------------------
+
+(module
+  (expression_statement
+    (jsx_fragment
+      (jsx_text)
+      (jsx_element
+        (identifier))
+      (jsx_text)
+      (jsx_element
+        (identifier))
+      (jsx_text))))
+
+================================================================================
+JSX with expression child
+================================================================================
+
+<div>{title}</div>
+
+--------------------------------------------------------------------------------
+
+(module
+  (expression_statement
+    (jsx_element
+      (identifier)
+      (jsx_expression
+        (identifier))
+      (identifier))))

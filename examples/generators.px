@@ -1,0 +1,17 @@
+def A(n: int):
+    return (
+        <div>
+            {<a href={f"hello{i}"}>{10 * i}</a> if i < 5 else None for i in range(n)}
+        </div>
+    )
+
+def B(n: int):
+    return (
+        <div>
+            {(i, 10 * i) for i in range(10)}
+        </div>
+    )
+
+print(A(n=10).to_html())
+print(B(n=10).to_html())
+

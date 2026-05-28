@@ -1,0 +1,25 @@
+# Test attribute-rendering corner cases.
+
+def Input(name: str, disabled: bool, value):
+    return <input type="text" name={name} disabled={disabled} value={value} />
+
+# True → bare attribute, False/None → omitted, else escaped.
+print(Input(name="a", disabled=True, value="hello").to_html())
+print(Input(name="b", disabled=False, value=42).to_html())
+print(Input(name="c", disabled=None, value="<script>").to_html())
+
+# Spread attributes merge with static ones.
+def Div(extras):
+    return <div class="base" {**extras}>content</div>
+
+print(Div(extras={"id": "main", "data-x": "1"}).to_html())
+print(Div(extras={"aria-label": 'has "quotes" & stuff'}).to_html())
+
+# Boolean attribute shorthand: `<input checked/>` is like checked=True.
+def Checkbox():
+    return <input type="checkbox" checked />
+
+print(Checkbox().to_html())
+
+# Empty string attribute is still rendered.
+print((<div title="">empty title</div>).to_html())

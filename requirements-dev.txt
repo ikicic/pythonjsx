@@ -1,0 +1,9 @@
+-r requirements.txt
+pytest>=7.0.0
+pytest-cov
+black
+ruff
+watchdog>=2.0.0
+# For building the Cython runtime (`make runtime-cython`).
+Cython>=3.0
+setuptools>=61

@@ -1,0 +1,24 @@
+"""Example .px file demonstrating PythonJSX syntax."""
+
+def Header(title: str):
+    """A header component."""
+    return <div id="header" class="header"><h1>{title}</h1></div>
+
+
+def Button(label: str, onclick: str = ""):
+    """A button component."""
+    return <button class="btn" onclick={onclick}>{label}</button>
+
+
+def App():
+    """Main app component."""
+    return (
+        <div class="app">
+            <Header title="Welcome" />
+            <Button label="Click me" onclick="handleClick()" />
+            <>
+                <span>Fragment item 1</span>
+                <span>Fragment item 2</span>
+            </>
+        </div>
+    )

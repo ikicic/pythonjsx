@@ -1,0 +1,11 @@
+# Pins XSS behavior: fragment children are escaped, and hostile spread
+# attr keys are rejected outright.
+
+user = "<script>alert(1)</script>"
+print((<>{user}</>).to_html())
+
+attrs = {'><script>alert(1)</script><x ': 'val'}
+try:
+    print((<div {**attrs}>hi</div>).to_html())
+except ValueError as e:
+    print(f"ValueError: {e}")

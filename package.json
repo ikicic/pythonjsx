@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "tree-sitter test",
+    "generate": "tree-sitter generate"
+  },
+  "dependencies": {
+    "tree-sitter-python": "^0.25.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}

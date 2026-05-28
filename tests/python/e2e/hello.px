@@ -1,0 +1,4 @@
+def hello():
+    return <div>Hello, world!</div>
+
+print(hello())

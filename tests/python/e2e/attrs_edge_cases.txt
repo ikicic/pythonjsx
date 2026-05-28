@@ -1,0 +1,7 @@
+<input type="text" name="a" disabled value="hello"/>
+<input type="text" name="b" value="42"/>
+<input type="text" name="c" value="&lt;script&gt;"/>
+<div class="base" id="main" data-x="1">content</div>
+<div class="base" aria-label="has &quot;quotes&quot; &amp; stuff">content</div>
+<input type="checkbox" checked/>
+<div title="">empty title</div>

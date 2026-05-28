@@ -1,0 +1,69 @@
+# ** — attribute dict expansion
+
+# 1. Basic attribute spread
+link_attrs = {"href": "/home", "class": "nav"}
+print(<a {**link_attrs}>Home</a>)
+
+# 2. Spread merged with explicit attribute
+print(<a {**link_attrs} id="logo">Home</a>)
+
+# 3. Spread with boolean attrs in the dict
+input_attrs = {"type": "text", "disabled": True, "required": True}
+print(<input {**input_attrs}/>)
+
+# * — iterable / generator children
+
+# 4. List comprehension as child expression
+items = ["apple", "banana", "cherry"]
+print(<ul>{[<li>{x}</li> for x in items]}</ul>)
+
+# 5. Generator expression as child (filtering)
+nums = [1, 2, 3, 4, 5]
+print(<ul>{(<li>{n}</li> for n in nums if n % 2 == 0)}</ul>)
+
+# 6. Nested: list of fragments, each with multiple children
+pairs = [("a", "1"), ("b", "2")]
+print(<dl>{[<>{<dt>{k}</dt>}{<dd>{v}</dd>}</> for k, v in pairs]}</dl>)
+
+# 7. Bare generator (no brackets/parens required)
+print(<ul>{<li>{n}</li> for n in nums if n % 2 == 0}</ul>)
+
+# 8. Plain value list: integers concatenated as strings
+print(<p>{[10, 20, 30]}</p>)
+
+# 9. Nested lists
+print(<p>{[10, 20, [30, 40, 50]]}</p>)
+
+# 10. Bare `{*iterable}` content — the iterable is passed as one
+#     SLOT_VALUE arg; the runtime iterates and escape-renders each item.
+words = ["hello ", "world", "!"]
+print(<div>greeting: {*words}</div>)
+
+# 11. Two separate `{*xs}` expressions in the same JSX element.
+xs = ["a", "b"]
+ys = ["c", "d"]
+print(<p>{*xs}-{*ys}</p>)
+
+# 12. `{*…}` on a call expression.
+def more(): return ["x", "y", "z"]
+print(<span>[{*more()}]</span>)
+
+# 13. `{*…}` escapes each iterated item (HTML-unsafe chars survive).
+dangerous = ["<script>", "&amp;"]
+print(<div>{*dangerous}</div>)
+
+# 14. `{*args}` as a component child: splats at the Python call
+#     boundary (Foo receives individual positional args, not a single
+#     iterable).  Verified by a *-varargs component that concatenates.
+def Pair(a, b):
+    return <span>({a}, {b})</span>
+
+pair_args = ["x", "y"]
+print(<Pair>{*pair_args}</Pair>)
+
+# 15. Mix a splat with regular children at a component call.
+def Triple(a, b, c):
+    return <span>[{a}, {b}, {c}]</span>
+
+mid = ["2"]
+print(<Triple>{"1"}{*mid}{"3"}</Triple>)

@@ -1,0 +1,22 @@
+def Icon(name: str):
+    return <img src={name + ".png"} alt={name} class="icon"/>
+
+def Badge():
+    return <span class="badge">NEW</span>
+
+def Button(label: str, tone: str):
+    return <button class={"btn btn-" + tone}><Icon name="star" /><span>{label}</span><Badge /></button>
+
+def Card(title: str, items: list):
+    return (
+        <article class="card">
+            <h2>{title}</h2>
+            <ul>{<li>{item}</li> for item in items}</ul>
+            <Button label="OK" tone="primary" />
+        </article>
+    )
+
+print(Icon(name="home").to_html())
+print(Badge().to_html())
+print(Button(label="Save", tone="green").to_html())
+print(Card(title="Demo", items=["alpha", "beta", "gamma"]).to_html())

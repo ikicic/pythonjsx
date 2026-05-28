@@ -1,0 +1,8 @@
+raw_html = "<script>alert(1)</script>"
+ampersand = "a & b"
+
+print(<div>{raw_html}</div>)
+print(<p>{ampersand}</p>)
+print(<a href="/q?a=1&b=2">link</a>)
+print(<abbr title='"quoted"'>abbr</abbr>)
+print(<a href="/example?a=5&amp;b=10">Hello with &quot;asdf &lt;&gt;</a>)

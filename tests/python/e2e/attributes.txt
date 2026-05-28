@@ -1,0 +1,2 @@
+<div id="main" class="card">Content</div>
+<a href="https://example.com" target="_blank">Visit</a>

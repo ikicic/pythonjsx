@@ -1,0 +1,4 @@
+<br/>
+<input type="text"/>
+<hr/>
+<img src="photo.jpg" alt="A photo"/>

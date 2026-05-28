@@ -1,0 +1,7 @@
+name = "World"
+count = "42"
+flag = "yes"
+
+print(<h1>{name}</h1>)
+print(<p>{count}</p>)
+print(<em>{flag}</em>)

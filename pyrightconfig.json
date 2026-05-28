@@ -1,0 +1,29 @@
+{
+  "exclude": [
+    "**/*.egg-info",
+    "**/.eggs",
+    "**/.git",
+    "**/.tox",
+    "**/.venv",
+    "**/__pycache__",
+    "**/build",
+    "**/dist",
+    "**/venv"
+  ],
+  "pythonVersion": "3.14",
+  "venvPath": ".",
+  "venv": "venv",
+  "reportAny": false,
+  "reportDeprecated": false,
+  "reportExplicitAny": false,
+  "reportImplicitOverride": false,
+  "reportImplicitStringConcatenation": false,
+  "reportMissingParameterType": false,
+  "reportUnannotatedClassAttribute": false,
+  "reportUnknownArgumentType": false,
+  "reportUnknownMemberType": false,
+  "reportUnusedParameter": false,
+  "reportUnknownParameterType": false,
+  "reportUnknownVariableType": false,
+  "reportUnusedCallResult": false
+}

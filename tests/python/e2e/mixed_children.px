@@ -1,0 +1,3 @@
+print(<p>Hello, <strong>world</strong>!</p>)
+print(<p><em>Note:</em>This is important.</p>)
+print(<div><span>left</span><span>right</span></div>)

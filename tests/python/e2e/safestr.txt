@@ -1,0 +1,1 @@
+<div><p>plain: a&amp;b</p><p>safe: <b>bold &amp; safe</b></p><a href="/search?q=cats&limit=10" class="hello" data-raw="x&y" class="bla">link</a><ul><li><i>0</i></li><li><i>1</i></li><li><i>2</i></li></ul></div>

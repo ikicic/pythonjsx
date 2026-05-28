@@ -1,0 +1,4 @@
+def page():
+    return <html><body>Hello, doctype!</body></html>
+
+print(page().to_html_document())

@@ -1,0 +1,6 @@
+<input type="checkbox" checked/>
+<input type="checkbox"/>
+<input type="checkbox" checked/>
+<input type="checkbox"/>
+<button disabled>Submit</button>
+<details open><summary>Info</summary></details>

@@ -1,0 +1,8 @@
+def twins():
+    return <><span>A</span><span>B</span></>
+
+def triplet():
+    return <><li>one</li><li>two</li><li>three</li></>
+
+print(twins())
+print(<ul>{triplet()}</ul>)

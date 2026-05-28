@@ -1,0 +1,5 @@
+def card():
+    return <div id="main" class="card">Content</div>
+
+print(card())
+print(<a href="https://example.com" target="_blank">Visit</a>)

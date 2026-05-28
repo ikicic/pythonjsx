@@ -1,0 +1,16 @@
+def Status(level: int):
+    # Multiple return paths with the SAME outer tag — eligible for inline.
+    if level > 0:
+        return <span class="ok">All good: {level} points</span>
+    elif level == 0:
+        return <span class="warn">Neutral: {level}</span>
+    else:
+        return <span class="err">Error code {level}</span>
+
+def Outer(values: list):
+    return <div>{<Status level={v} /> for v in values}</div>
+
+print(Status(level=5).to_html())
+print(Status(level=0).to_html())
+print(Status(level=-42).to_html())
+print(Outer(values=[3, 0, -1]).to_html())

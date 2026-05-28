@@ -1,0 +1,4 @@
+<span class="ok">All good: 5 points</span>
+<span class="warn">Neutral: 0</span>
+<span class="err">Error code -42</span>
+<div><span class="ok">All good: 3 points</span><span class="warn">Neutral: 0</span><span class="err">Error code -1</span></div>

@@ -1,0 +1,15 @@
+<a href="/home" class="nav">Home</a>
+<a href="/home" class="nav" id="logo">Home</a>
+<input type="text" disabled required/>
+<ul><li>apple</li><li>banana</li><li>cherry</li></ul>
+<ul><li>2</li><li>4</li></ul>
+<dl><dt>a</dt><dd>1</dd><dt>b</dt><dd>2</dd></dl>
+<ul><li>2</li><li>4</li></ul>
+<p>102030</p>
+<p>1020304050</p>
+<div>greeting: hello world!</div>
+<p>ab-cd</p>
+<span>[xyz]</span>
+<div>&lt;script&gt;&amp;amp;</div>
+<span>(x, y)</span>
+<span>[1, 2, 3]</span>

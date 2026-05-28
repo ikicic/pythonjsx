@@ -1,0 +1,19 @@
+def Greet(name: str):
+    return <div class="greet">Hello, {name}!</div>
+
+def Link(href: str, text: str):
+    return <a href={href}>{text}</a>
+
+def Comment(author: str, body: str):
+    return <div><b>{author}</b>: <span>{body}</span></div>
+
+# User-provided strings with HTML special characters must be escaped at every
+# level: via inline variants, via render_text, via render_attr.
+untrusted = "<script>alert('x')</script>"
+quoted = 'He said "hi" & left'
+
+print(Greet(name=untrusted).to_html())
+print(Link(href="?q=" + untrusted, text=quoted).to_html())
+print(Comment(author=untrusted, body=quoted).to_html())
+# Nested: component calling component with user input
+print((<section><Greet name={untrusted} /><Comment author="ok" body={quoted} /></section>).to_html())

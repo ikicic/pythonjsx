@@ -1,0 +1,6 @@
+print(<input type="checkbox" checked/>)
+print(<input type="checkbox" checked={None}/>)
+print(<input type="checkbox" checked={True}/>)
+print(<input type="checkbox" checked={False}/>)
+print(<button disabled>Submit</button>)
+print(<details open><summary>Info</summary></details>)

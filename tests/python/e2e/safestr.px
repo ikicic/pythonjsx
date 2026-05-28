@@ -1,0 +1,14 @@
+from pythonjsx.runtime import SafeStr
+
+def page():
+    body = SafeStr("<b>bold &amp; safe</b>")
+    url = SafeStr('/search?q=cats&limit=10" class="hello')
+    attrs = {"data-raw": SafeStr('x&y" class="bla')}
+    return <div>
+        <p>plain: a&b</p>
+        <p>safe: {body}</p>
+        <a href={url} {**attrs}>link</a>
+        <ul>{<li>{SafeStr(f"<i>{i}</i>")}</li> for i in range(3)}</ul>
+    </div>
+
+print(page())
